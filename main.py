@@ -2,8 +2,9 @@ import requests
 import os
 
 # Obtiene las credenciales de GitHub Secrets
-TOKEN = os.environ.get("TELEGRAM_TOKEN")
-CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID")
+# Obtiene las credenciales y elimina cualquier espacio en blanco invisible (.strip())
+TOKEN = os.environ.get("TELEGRAM_TOKEN", "").strip()
+CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID", "").strip()
 
 # Endpoint de Epic Games
 url = "https://store-site-backend-static.ak.epicgames.com/freeGamesPromotions?locale=es-ES&country=CO&allowCountries=CO"
